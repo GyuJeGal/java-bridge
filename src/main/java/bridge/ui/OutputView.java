@@ -16,6 +16,17 @@ public class OutputView {
     public void printMap(List<String> bridge, int index, boolean isMatch) {
     }
 
+    public List<String> getFrame(int size) {
+        List<String> result = new ArrayList<>();
+        for (int i = 0; i < size; i++) {
+            if (checkIndex(size, result, i)) {
+                continue;
+            }
+            result.add(" ");
+        }
+        return result;
+    }
+
     private boolean checkIndex(int size, List<String> result, int i) {
         if (i == 0) {
             result.add("[");
