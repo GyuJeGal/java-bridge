@@ -49,4 +49,12 @@ public class InGame {
     public void increaseCount() {
         count++;
     }
+
+    private void quitGame(int i) {
+        // 게임 종료
+        isSuccess = false;
+        keepGoing = false;
+        System.out.println("최종 게임 결과");
+        outputView.printMap(bridge, i, false);
+    }
 }
