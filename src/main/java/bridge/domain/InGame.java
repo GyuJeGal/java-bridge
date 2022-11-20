@@ -71,4 +71,12 @@ public class InGame {
         System.out.println("최종 게임 결과");
         outputView.printMap(bridge, i, false);
     }
+
+    private void clearGame(int bridgeSize, int i) {
+        if (i == bridgeSize - 1) {
+            System.out.println("최종 게임 결과");
+            outputView.printMap(bridge, i, true);
+            keepGoing = false;
+        }
+    }
 }
