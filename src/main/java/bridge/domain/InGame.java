@@ -28,6 +28,15 @@ public class InGame {
         this.bridgeGame = new BridgeGame();
     }
 
+    private boolean checkRestart() {
+        System.out.println("게임을 다시 시도할지 여부를 입력해주세요. (재시도: R, 종료: Q)");
+        String gameCommand = inputView.readGameCommand();
+        if (isRestart(gameCommand)) {
+            return true;
+        }
+        return false;
+    }
+
     private boolean isRestart(String gameCommand) {
         // 게임 재시작
         if (gameCommand.equals("R")) {
