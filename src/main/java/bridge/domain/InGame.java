@@ -28,6 +28,15 @@ public class InGame {
         this.bridgeGame = new BridgeGame();
     }
 
+    private boolean isRestart(String gameCommand) {
+        // 게임 재시작
+        if (gameCommand.equals("R")) {
+            bridgeGame.retry(this);
+            return true;
+        }
+        return false;
+    }
+
     public void increaseCount() {
         count++;
     }
