@@ -28,6 +28,20 @@ public class InGame {
         this.bridgeGame = new BridgeGame();
     }
 
+    private boolean isWrongWay(int i, String movingCommand) {
+        // 이동할 수 없는 칸으로 이동 시
+        if (!bridgeGame.move(bridge, movingCommand, i)) {
+            outputView.printMap(bridge, i, false);
+
+            if (checkRestart()) {
+                return true;
+            }
+            quitGame(i);
+            return true;
+        }
+        return false;
+    }
+
     private boolean checkRestart() {
         System.out.println("게임을 다시 시도할지 여부를 입력해주세요. (재시도: R, 종료: Q)");
         String gameCommand = inputView.readGameCommand();
