@@ -15,6 +15,11 @@ public class InputException {
         this.inputUtil = new InputUtil();
     }
 
+    public void checkBridgeSize(String input) {
+        checkBridgeSizePattern(input);
+        checkBridgeSizeRange(inputUtil.convertToInt(input));
+    }
+
     public void checkBridgeSizePattern(String input) {
         Pattern pattern = Pattern.compile(BRIDGE_SIZE_PATTERN);
         if (!pattern.matcher(input).matches()) {
