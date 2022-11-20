@@ -28,6 +28,13 @@ public class InGame {
         this.bridgeGame = new BridgeGame();
     }
 
+    private void startMoving(int bridgeSize) {
+        while (keepGoing) {
+            movingDetail(bridgeSize);
+        }
+        outputView.printResult(isSuccess, count);
+    }
+
     private void movingDetail(int bridgeSize) {
         for (int i = 0; i < bridgeSize; i++) {
             System.out.println("이동할 칸을 선택해주세요. (위: U, 아래: D)");
