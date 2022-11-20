@@ -69,6 +69,18 @@ public class OutputView {
         }
     }
 
+    private void setBridgeResultToFail(List<String> bridge, int index, List<List<String>> bridgeResult) {
+        int addIndex = (4 * index) + 2;
+        // 다리 윗부분이 이동 가능할때
+        if (bridge.get(index).equals("U")) {
+            bridgeResult.get(1).set(addIndex, "X");
+        }
+        // 다리 아랫부분이 이동 가능할때
+        if (bridge.get(index).equals("D")) {
+            bridgeResult.get(0).set(addIndex, "X");
+        }
+    }
+
     /**
      * 게임의 최종 결과를 정해진 형식에 맞춰 출력한다.
      * <p>
