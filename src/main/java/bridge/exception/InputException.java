@@ -33,6 +33,11 @@ public class InputException {
         }
     }
 
-
+    public void checkMoving(String input) {
+        Pattern pattern = Pattern.compile(MOVING_PATTERN);
+        if (!pattern.matcher(input).matches()) {
+            throw new IllegalArgumentException(ERROR + "U 또는 D만 입력 가능합니다.");
+        }
+    }
 
 }
