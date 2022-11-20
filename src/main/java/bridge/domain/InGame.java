@@ -28,6 +28,19 @@ public class InGame {
         this.bridgeGame = new BridgeGame();
     }
 
+    private void movingDetail(int bridgeSize) {
+        for (int i = 0; i < bridgeSize; i++) {
+            System.out.println("이동할 칸을 선택해주세요. (위: U, 아래: D)");
+            String movingCommand = inputView.readMoving();
+
+            if (isWrongWay(i, movingCommand)) {
+                break;
+            }
+            outputView.printMap(bridge, i, true);
+            clearGame(bridgeSize, i);
+        }
+    }
+
     private boolean isWrongWay(int i, String movingCommand) {
         // 이동할 수 없는 칸으로 이동 시
         if (!bridgeGame.move(bridge, movingCommand, i)) {
