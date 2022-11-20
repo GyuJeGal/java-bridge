@@ -22,5 +22,12 @@ public class InputException {
         }
     }
 
+    public void checkBridgeSizeRange(int bridgeSize) {
+        if (bridgeSize < 3 || bridgeSize > 20) {
+            throw new IllegalArgumentException(ERROR + "다리 길이는 3 이상 20 이하의 숫자입니다.");
+        }
+    }
+
+
 
 }
