@@ -28,6 +28,16 @@ public class InGame {
         this.bridgeGame = new BridgeGame();
     }
 
+    public void startGame() {
+        System.out.println("다리 건너기 게임을 시작합니다.");
+        System.out.println("다리의 길이를 입력해주세요.");
+        int bridgeSize = inputView.readBridgeSize();
+
+        bridge = bridgeMaker.makeBridge(bridgeSize);
+
+        startMoving(bridgeSize);
+    }
+
     private void startMoving(int bridgeSize) {
         while (keepGoing) {
             movingDetail(bridgeSize);
