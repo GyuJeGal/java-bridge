@@ -43,6 +43,20 @@ public class OutputView {
         return false;
     }
 
+    private void setBridgeResult(List<String> bridge, int index, List<List<String>> bridgeResult) {
+        for (int i = 0; i < index; i++) {
+            int addIndex = (4 * i) + 2;
+            // 다리 윗부분이 이동 가능할때
+            if (bridge.get(i).equals("U")) {
+                bridgeResult.get(0).set(addIndex, "O");
+            }
+            // 다리 아랫부분이 이동 가능할때
+            if (bridge.get(i).equals("D")) {
+                bridgeResult.get(1).set(addIndex, "O");
+            }
+        }
+    }
+
     /**
      * 게임의 최종 결과를 정해진 형식에 맞춰 출력한다.
      * <p>
