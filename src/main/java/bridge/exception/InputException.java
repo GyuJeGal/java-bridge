@@ -40,4 +40,11 @@ public class InputException {
         }
     }
 
+    public void checkGameCommand(String input) {
+        Pattern pattern = Pattern.compile(GAME_COMMAND_PATTERN);
+        if (!pattern.matcher(input).matches()) {
+            throw new IllegalArgumentException(ERROR + "R 또는 Q만 입력 가능합니다.");
+        }
+    }
+
 }
